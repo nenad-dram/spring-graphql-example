@@ -1,0 +1,48 @@
+query getAllBooks {
+  books {
+    id
+    name
+    pageCount
+    author {
+      firstName
+      lastName
+    }
+  }
+}
+
+query getBookById {
+  bookById(id: 4) {
+    id
+    name
+    pageCount
+    author {
+      firstName
+      lastName
+    }
+  }
+}
+
+mutation addBook {
+  addBook(book: { name: "New Book", pageCount: 123, authorId: 1})
+  {
+    id
+    name
+  }
+}
+
+mutation updateBook {
+  updateBook(id: 5, book: { name: "New Book", pageCount: 321, authorId: 1})
+  {
+    id
+    name
+    pageCount
+  }
+}
+
+mutation deleteBook {
+  deleteBook(id: 4)
+  {
+    id
+    name
+  }
+}

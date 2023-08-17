@@ -1,0 +1,41 @@
+query getAllAuthors {
+  authors {
+    id
+    firstName
+    lastName
+  }
+}
+
+query getAuthorById {
+  authorById(id: 2) {
+    firstName
+    lastName
+  }
+}
+
+mutation addAuthor {
+  addAuthor(author: {firstName: "John", lastName: "Doe"})
+  {
+    id
+    firstName
+    lastName
+  }
+}
+
+mutation updateAuthor {
+  updateAuthor(id: 4, author: {firstName: "Jane", lastName: "Doe"})
+  {
+    id
+    firstName
+    lastName
+  }
+}
+
+mutation deleteAuthor {
+  deleteAuthor(id: 4)
+  {
+    id
+    firstName
+    lastName
+  }
+}
